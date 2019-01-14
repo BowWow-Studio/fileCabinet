@@ -7,12 +7,11 @@ import { BodyTableOptions } from '../model/bodytableOption.model';
   styleUrls: ['./body-table.component.scss']
 })
 export class BodyTableComponent implements OnInit {
-  public readonly BodyTableOptions = BodyTableOptions;
+  public readonly bodyTableOptions = BodyTableOptions;
   public selectedOption: BodyTableOptions = BodyTableOptions.NONE;
   constructor() { }
 
   ngOnInit() {
-    console.log(Object.keys(this.BodyTableOptions));
   }
 
 }

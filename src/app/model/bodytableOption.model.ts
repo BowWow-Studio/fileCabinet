@@ -1,6 +1,6 @@
 export enum BodyTableOptions {
-    NONE,
-    FORMDATA,
-    XWWWFORMURLENCODED,
-    RAW
+    NONE = 'NONE',
+    FORMDATA = 'FORMDATA',
+    XWWWFORMURLENCODED = 'XWWWFORMURLENCODED',
+    RAW = 'RAW'
 }
