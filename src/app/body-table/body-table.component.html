@@ -1,0 +1,8 @@
+<mat-radio-group [(ngModel)]="selectedOption">
+  <mat-radio-button value="BodyTableOptions.NONE">none</mat-radio-button>
+  <mat-radio-button value="BodyTableOptions.FORMDATA">form-data</mat-radio-button>
+  <mat-radio-button value="BodyTableOptions.XWWWFORMURLENCODED">x-www-form-urlencoded</mat-radio-button>
+  <mat-radio-button value="BodyTableOptions.RAW">raw</mat-radio-button>
+</mat-radio-group>
+{{selectedOption}}
+<app-table></app-table>

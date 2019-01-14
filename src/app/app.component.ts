@@ -25,6 +25,12 @@ export class AppComponent {
 
   ];
   public sendRequest( url: string, method: HttpMethod) {
-    this.http.sendRequest(this.URL, this.Method).subscribe(result => this.result = JSON.stringify(result));
+    this.http.sendRequest(this.URL, this.Method).subscribe(result => {
+      if (result instanceof Object) {
+        this.result = JSON.stringify(result);
+      } else {
+        this.result = result;
+      }
+    });
   }
 }

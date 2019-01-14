@@ -1,14 +1,23 @@
-<mat-form-field class="example-full-width">
-    <input matInput placeholder="URL" [(ngModel)]="URL">
-</mat-form-field>
-<mat-form-field>
-    <mat-select placeholder="METHOD" [(ngModel)]="Method">
-      <mat-option *ngFor="let httpMethod of httpMethodAndName" [value]="httpMethod[0]" >
-        {{httpMethod[1]}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-<button mat-button (click)="sendRequest(URL,Method)">Send</button>
-<mat-form-field>
-    <textarea matInput placeholder="Leave a comment" [value]="result"></textarea>
-</mat-form-field>
+<div fxLayout="column">
+  <div fxLayout="row" fxLayoutGap="10px">
+    <mat-form-field fxFlex="20" >
+      <mat-select placeholder="METHOD" [(ngModel)]="Method">
+        <mat-option *ngFor="let httpMethod of httpMethodAndName" [value]="httpMethod[0]">
+          {{httpMethod[1]}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" fxFlex="70">
+      <input matInput placeholder="URL" [(ngModel)]="URL">
+    </mat-form-field>
+    <button fxFlex="10" mat-stroked-button (click)="sendRequest(URL,Method)">Send</button>
+
+  </div>
+  <app-option></app-option>
+  <div>
+    <mat-form-field fxFlex = "100">
+      <textarea id="textArea" matInput placeholder="Response" [value]="result"></textarea>
+    </mat-form-field>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="Key">
+    <th mat-header-cell *matHeaderCellDef fxFlex="getFlex()">Key</th>
+    <td mat-cell *matCellDef="let element" fxFlex="getFlex()"> <input matInput placeholder="Key" [(ngModel)]="element.Key" (ngModelChange)="updateDataSource(element)"></td>
+  </ng-container>
+  <ng-container matColumnDef="Value" >
+    <th mat-header-cell *matHeaderCellDef fxFlex="getFlex()">Value</th>
+    <td mat-cell *matCellDef="let element" fxFlex="getFlex()"> <input matInput placeholder="Value" [(ngModel)]="element.Value" (ngModelChange)="updateDataSource(element)"></td>
+  </ng-container>
+  <ng-container matColumnDef="Description">
+    <th mat-header-cell *matHeaderCellDef fxFlex="getFlex()">Description</th>
+    <td mat-cell *matCellDef="let element" fxFlex="getFlex()"> <input matInput placeholder="Description" [(ngModel)]="element.Description" (ngModelChange)="updateDataSource(element)"></td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

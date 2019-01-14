@@ -7,11 +7,16 @@ import { MatModule } from './mat.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpHandler, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NoopInterceptor } from './interceptor';
-
-
+import {FlexLayoutModule} from '@angular/flex-layout';
+import { OptionComponent } from './option/option.component';
+import { TableComponent } from './table/table.component';
+import { BodyTableComponent } from './body-table/body-table.component';
 @NgModule({
   declarations: [
     AppComponent,
+    OptionComponent,
+    TableComponent,
+    BodyTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,7 +24,8 @@ import { NoopInterceptor } from './interceptor';
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    MatModule
+    MatModule,
+    FlexLayoutModule
   ],
   providers: [[{
     provide: HTTP_INTERCEPTORS,

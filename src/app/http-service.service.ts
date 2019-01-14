@@ -8,10 +8,12 @@ import { Observer, Observable, from } from 'rxjs';
 export class HttpServiceService {
 
   constructor(private http: HttpClient) { }
-  public sendRequest(url: string, method: HttpMethod): Observable<object> {
+  public sendRequest(url: string, method: HttpMethod): Observable<object|string> {
+    const options = {responseType: 'text' as 'json'};
     switch (method) {
+
       case HttpMethod.GET : {
-        return this.http.get(url);
+        return this.http.get<string>(url, options);
         break;
       }
       case HttpMethod.POST : {
